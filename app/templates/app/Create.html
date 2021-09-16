@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Record</title>
+</head>
+<body>
+
+    <center>
+     <h3>Add new record</h3>
+      <hr/>
+      <form method="POST">
+        {% csrf_token %}
+      <table border="1">
+          <tr>
+              <td>movieid</td>
+              <td><input type = "text" placeholder="movieid..." name="movieid"></td>
+          </tr>
+          <tr>
+              <td> title</td>
+              <td><input type = "text" placeholder="title..." name="title"></td>
+          </tr>
+          <tr>
+              <td> geners</td>
+              <td><input type = "text" placeholder="geners..." name="geners"></td>
+          </tr>
+      </table>
+        <input type="submit" value="Add new record"/>
+        <a href="{%url 'movies'%}">Movies</a>
+        </hr>
+        {% if message %}
+        {% for result in messages%}
+          <b>{{result}}</b>{% endfor %}
+
+          {% endif %}
+      </form>
+
+    </center>
+
+</body>
+</html>

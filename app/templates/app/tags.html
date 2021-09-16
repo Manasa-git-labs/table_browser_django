@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block banner_slider %}
+<br>
+<a href="{% url 'tinsert'%}">Add Record</a>
+<table id="example" class="display" cellspacing="0" width="100%">
+
+<!-- thead and tfoot is just fancy representation. Keep it if you want both or just delete tfoot. -->
+
+        <thead>
+            <tr>
+                    <th>userid</th>
+                    <th>titleid</th>
+                    <th>tag</th>
+                    <th>timestamp</th>
+            </tr>
+        </thead>
+ 
+
+<!-- just run the for loop for one of the tr tag below and fetch the data from models. --> 
+        <tbody>
+        {% for line in data %}
+            <tr>
+                <td>{{ line.userid }}</td>
+                <td>{{ line.titleid }}</td>
+                <td>{{ line.tag }}</td>
+                <td>{{ line.timestamp }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock banner_slider %}
+
+{% block livesale %}
+<br>
+<br>
+<br>
+<br>
+ <center><p> thank you for visiting the site <p></center>
+{% endblock livesale %}

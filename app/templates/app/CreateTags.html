@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Record</title>
+</head>
+<body>
+    <center>
+     <h3>Add new record</h3>
+      <hr/>
+      <form method="POST">
+        {% csrf_token %}
+      <table border="1">
+          <tr>
+              <td>userid</td>
+              <td><input type = "text" placeholder="userid..." name="userid"></td>
+          </tr>
+          <tr>
+              <td> titleid</td>
+              <td><input type = "text" placeholder="titleid..." name="titleid" required></td>
+          </tr>
+          <tr>
+              <td> Tags </td>
+              <td><input type = "text" placeholder="tag..." name="tag"></td>
+          </tr>
+          <tr>
+              <td> timestamp</td>
+              <td><input type = "text" placeholder="timestamp..." name="timestamp"></td>
+          </tr>
+      </table>
+        <input type="submit" value="Add new record"/>
+        <a href="{%url 'tags'%}">Tags</a>
+        </hr>
+        {% if message %}
+        {% for result in messages%}
+        <b>{{result}}</b>
+          {% endfor %}
+          {% endif %}
+      </form>
+
+    </center>
+
+</body>
+</html>

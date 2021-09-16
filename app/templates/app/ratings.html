@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block banner_slider %}
+<br>
+<a href="{% url 'rinsert'%}">Add Record</a>
+<table id="example" class="display" cellspacing="0" width="100%">
+
+        <thead>
+            <tr>
+                    <th>userid</th>
+                    <th>titleid</th>
+                    <th>rating</th>
+                    <th>timestamp</th>
+            </tr>
+        </thead>
+ 
+
+        <tbody>
+        {% for line in data %}
+            <tr>
+                <td>{{ line.userid }}</td>
+                <td>{{ line.titleid }}</td>
+                <td>{{ line.rating }}</td>
+                <td>{{ line.timestamp }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock banner_slider %}
+
+{% block livesale %}
+<br>
+<br>
+<br>
+<br>
+ <center><p> thank you for visiting the site <p></center>
+{% endblock livesale %}
